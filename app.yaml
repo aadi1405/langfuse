@@ -1,0 +1,14 @@
+runtime: custom
+env: flex
+
+# Ensure the following ports are exposed
+network:
+  session_affinity: true
+  forwarded_ports:
+    - 80
+    - 443
+  instance_tag: langfuse
+
+# Set any environment variables your Langfuse instance needs (e.g., database connection details)
+env_variables:
+  LANGFUSE_DATABASE_URL: genaitest-418515:us-central1:db-three
